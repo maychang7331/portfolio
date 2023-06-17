@@ -68,7 +68,7 @@ const Navbar = () => {
       const nav = document.querySelector("nav");
       const navHeight = getComputedStyle(nav).getPropertyValue("height").trim();
 
-      const scrollPosition = window.pageYOffset;
+      const scrollPosition = window.pageYOffset || window.scrollY;
 
       if (scrollPosition > prevScrollPos.current) {
         // scroll down
@@ -90,7 +90,7 @@ const Navbar = () => {
 
   return (
     <nav className={`nav ${isMobileNavOpen ? "open" : ""}`}>
-      <a className="logo" href="/">
+      <a className="logo" href="./">
         May
       </a>
       <div className="main__nav">
@@ -124,7 +124,11 @@ const Navbar = () => {
             closeMobileNav={closeMobileNav}
           />
           <li className="link link--border-oval link--fill-hover main__nav--resume">
-            <a href="/resume.pdf" target="_blank" rel="noopener noreferrer">
+            <a
+              href="./May_Resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Resume
             </a>
           </li>

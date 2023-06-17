@@ -30,6 +30,7 @@ function About() {
                   className="link--underline"
                   href="https://www.ncku.edu.tw/"
                   target="_blank"
+                  rel="noopener noreferrer"
                 >
                   National Cheng Kung University
                 </a>

@@ -12,6 +12,8 @@ function Contact() {
               <a
                 className="link--icon link--fill-hover social__link"
                 href="mailto:p66084023@gs.ncku.edu.tw"
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 <EnvelopeOpen />
               </a>
@@ -20,6 +22,8 @@ function Contact() {
               <a
                 className="link--icon link--fill-hover social__link"
                 href="https://www.linkedin.com/in/chih-yu-chang-069b29221/"
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 <LinkedinLogo />
               </a>
@@ -27,7 +31,9 @@ function Contact() {
             <li className="social__item">
               <a
                 className="link--icon link--fill-hover social__link"
-                href="https://github.com/May7331"
+                href="https://github.com/maychang7331"
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 <GithubLogo />
               </a>
@@ -42,7 +48,7 @@ function Contact() {
         </div>
         <a
           className="link--border-oval contact__resume"
-          href="/resume.pdf"
+          href="./May_Resume.pdf"
           target="_blank"
           rel="noopener noreferrer"
         >
