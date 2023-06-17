@@ -48,7 +48,7 @@ function Contact() {
         </div>
         <a
           className="link--border-oval contact__resume"
-          href="./May_Resume.pdf"
+          href="../../May_Resume.pdf"
           target="_blank"
           rel="noopener noreferrer"
         >

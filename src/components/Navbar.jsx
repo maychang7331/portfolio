@@ -125,7 +125,7 @@ const Navbar = () => {
           />
           <li className="link link--border-oval link--fill-hover main__nav--resume">
             <a
-              href="./May_Resume.pdf"
+              href="../../May_Resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
             >
