@@ -1,0 +1,225 @@
+.nav {
+  z-index: 9;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $color-bg;
+  opacity: 0.9;
+  padding: 1.2rem 4.8rem;
+
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: $nav-height;
+  transform: translateY(0);
+  // transform: translateY(-$nav-height);
+  transition: transform 0.3s;
+}
+
+.logo {
+  font-size: 2rem;
+  font-weight: 500;
+  font-family: $font-mono;
+
+  display: inline-block;
+  cursor: pointer;
+  text-decoration: none;
+  color: $color-primary;
+  border: $color-primary 0.25rem solid;
+  padding: 0.25rem 1rem;
+  border-radius: 0.25rem;
+
+  text-shadow: 0 0 0.1rem rgba(255, 255, 255, 0.3), 0 0 0.2rem currentColor;
+
+  box-shadow: inset 0 0 0.5rem 0 $color-primary, 0 0 0.5rem 0 $color-primary;
+
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    box-shadow: 0 0 2rem 0.5rem $color-primary;
+    opacity: 0;
+    background-color: $color-primary;
+    z-index: -1;
+    transition: opacity 100ms linear;
+  }
+
+  &:hover,
+  &:focus {
+    color: $color-bg;
+    text-shadow: none;
+  }
+
+  &:hover::after,
+  &:focus::after {
+    opacity: 1;
+  }
+}
+
+.main__nav {
+  font-family: $font-mono;
+  color: $color-primary-tint;
+  font-weight: 400;
+
+  &--list {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    gap: 3rem;
+  }
+
+  &--item {
+    border-bottom: 2px solid transparent;
+    a {
+      color: $color-primary-tint;
+
+      &:hover,
+      &:active {
+        color: $color-primary;
+      }
+
+      &.active {
+        color: $color-primary;
+        border-bottom: 2px solid $color-primary;
+      }
+    }
+  }
+
+  &--resume {
+    &::after {
+      top: -1px;
+      left: -1px;
+      border-radius: 50px;
+    }
+
+    &:hover {
+      a {
+        color: $color-bg;
+      }
+
+      &::after {
+        transform: scale(1);
+      }
+    }
+  }
+}
+
+.mobile__nav--overlay {
+  display: none;
+}
+
+.mobile__nav--btn {
+  z-index: 999;
+  padding: 1rem;
+  margin-right: -1rem;
+  display: none;
+
+  svg {
+    width: 3.2rem;
+    height: 3.2rem;
+  }
+}
+
+/**************************/
+/* BELOW 748px (Tablets)*/
+/**************************/
+@media screen and (max-width: $bp-tablet) {
+  .mobile__nav--overlay {
+    display: flex;
+  }
+
+  .mobile__nav--btn {
+    display: block;
+  }
+
+  .main__nav {
+    font-size: 3rem;
+    background-color: $color-bg;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    transform: translateX(100%);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    transition: all 0.6s;
+
+    /* Hide navigation*/
+    // display: none; /* Allows NO transition */
+    // 1) Hide it visually
+    opacity: 0;
+    // 2) Make it unaccessible to mouse and keyboard
+    pointer-events: none;
+    // 3) Hide it from screen readers
+    visibility: hidden;
+
+    &--list {
+      flex-direction: column;
+    }
+
+    li {
+      opacity: 0;
+      transform: translateX(10rem);
+      transition: transform 0.8s ease-out, opacity 1s;
+
+      @for $i from 1 to 6 {
+        &:nth-child(#{$i}) {
+          transition-delay: $trans-delay;
+        }
+        $trans-delay: $trans-delay + 0.2;
+      }
+    }
+  }
+
+  .mobile__nav--overlay {
+    z-index: -1;
+    background-color: $color-primary-alpha;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    transform: translateX(-100%);
+    opacity: 0;
+    transition: all 0.9s ease-out;
+  }
+
+  /* Open navigation */
+  .open {
+    .main__nav {
+      z-index: 1;
+      opacity: 1;
+      pointer-events: auto;
+      visibility: visible;
+      transform: translateX(0);
+
+      li {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    .mobile__nav--overlay {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+}
+
+/**************************/
+/* BELOW 480px (Mobile)*/
+/**************************/
+@media screen and (max-width: $bp-mobile) {
+  .nav {
+    padding: 1.2rem 2.4rem;
+  }
+}

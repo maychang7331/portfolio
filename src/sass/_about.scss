@@ -1,0 +1,55 @@
+.about {
+  &__name {
+    background-image: url("../assets/h1-background.png");
+    background-size: cover;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  &__text {
+    font-size: 1.6rem;
+    font-weight: 300;
+    line-height: 1.6;
+    margin-bottom: 2.4rem;
+  }
+
+  &__img {
+    display: flex;
+    margin: 0 auto;
+    img {
+      width: 90%;
+      border-radius: 50px;
+      display: block;
+      margin: auto;
+    }
+  }
+}
+
+/**************************/
+/* BELOW 748px (Tablets)*/
+/**************************/
+@media screen and (max-width: $bp-tablet) {
+  .about__img {
+    img {
+      width: 50%;
+    }
+  }
+}
+
+/**************************/
+/* BELOW 480px (Mobile)*/
+/**************************/
+@media screen and (max-width: $bp-mobile) {
+  .about__img {
+    img {
+      width: 70%;
+    }
+  }
+}
