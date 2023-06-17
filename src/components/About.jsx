@@ -1,4 +1,5 @@
-import image from "../assets/headshot.png";
+import headshot from "../assets/headshot-min.png";
+import headshotWebp from "../assets/headshot-min.webp";
 
 function About() {
   return (
@@ -42,7 +43,11 @@ function About() {
           </ul>
         </div>
         <div className="about__img">
-          <img className="about__img" src={image} alt="head shot"></img>
+          <picture>
+            <source srcSet={headshotWebp} type="image/webp" />
+            <source srcSet={headshot} type="image/png" />
+            <img className="about__img" src={headshot} alt="head shot"></img>
+          </picture>
         </div>
       </div>
     </section>
