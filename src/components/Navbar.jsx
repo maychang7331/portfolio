@@ -10,7 +10,11 @@ function NavItem({
   closeMobileNav,
 }) {
   return (
-    <li className={`main__nav--item ${activeSection === to ? "active" : ""}`}>
+    <li
+      className={`main__nav--item ${
+        activeSection === to ? "activeSection" : ""
+      }`}
+    >
       <Link
         to={to}
         spy={true}
@@ -41,15 +45,15 @@ const Navbar = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const scrollPosition = window.pageYOffset;
+      const scrollPosition = window.scrollY;
       const sections = document.querySelectorAll("section");
 
       sections.forEach((section) => {
-        const sectionTop = section.offsetTop - 70;
+        const sectionTop = section.offsetTop;
         const sectionHeight = section.offsetHeight;
         if (
-          scrollPosition >= sectionTop &&
-          scrollPosition < sectionTop + sectionHeight
+          scrollPosition >= sectionTop - window.innerHeight / 2 &&
+          scrollPosition < sectionTop + sectionHeight - window.innerHeight / 2
         ) {
           setActiveSection(section.id);
         }
@@ -61,14 +65,14 @@ const Navbar = () => {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []);
+  }, [activeSection]);
 
   useEffect(() => {
     const handleNavScroll = () => {
       const nav = document.querySelector("nav");
       const navHeight = getComputedStyle(nav).getPropertyValue("height").trim();
 
-      const scrollPosition = window.pageYOffset || window.scrollY;
+      const scrollPosition = window.scrollY;
 
       if (scrollPosition > prevScrollPos.current) {
         // scroll down

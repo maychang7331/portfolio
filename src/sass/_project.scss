@@ -1,12 +1,8 @@
-.section-project {
-  padding-bottom: 4.8rem;
-}
-
 .project__item {
   margin-bottom: 9.6rem;
 
   &:last-child {
-    margin-bottom: none;
+    margin-bottom: 0;
   }
 
   .project__img {

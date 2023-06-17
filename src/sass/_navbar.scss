@@ -81,11 +81,11 @@
       &:active {
         color: $color-primary;
       }
+    }
 
-      &.active {
-        color: $color-primary;
-        border-bottom: 2px solid $color-primary;
-      }
+    &.activeSection {
+      color: $color-primary;
+      border-bottom: 2px solid $color-primary;
     }
   }
 
