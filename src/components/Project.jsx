@@ -4,15 +4,14 @@ const projectList = [
   {
     id: 0,
     title: "Personal Protfolio",
-    imgPath:
-      "https://github.com/maychang7331/portfolio/blob/main/src/assets/project/00_portfolio.png",
+    imgPath: "../assets/project/00_portfolio.png",
     desc: "Welcome to my personal portfolio website, the very one you are currently exploring! As you navigate through this site, powered by React and utilizing React hooks, HTML, CSS, and JavaScript, you'll experience an interactive browsing journey. Take a closer look at my diverse range of projects and delve into my background to gain a deeper understanding of my skills. Hope you enjoy your time here.",
     tech: ["React", "JS", "CSS", "HTML"],
   },
   {
     id: 1,
     title: "Recipe Website",
-    imgPath: "../assets/project/01_forkify.png",
+    imgPath: "./../assets/project/01_forkify.png",
     desc: "A responsive recipe website integrates API for recipe searching. This dynamic platform incorporates features such as bookmarking your favorite recipes, uploading your own recipes, adjusting ingredient amounts, and search suggestions for a personalized user experience.",
     tech: ["JavaScript", "CSS", "HTML"],
     links: {
@@ -44,9 +43,9 @@ const projectList = [
   },
 ];
 
-// function getImgUrl(imgPath) {
-//   return new URL(`${imgPath}`, import.meta.url).href;
-// }
+function getImgUrl(imgPath) {
+  return new URL(`${imgPath}`, import.meta.url).href;
+}
 
 function ProjectItem({ project }) {
   const { title, imgPath, desc, tech, links } = project;
@@ -55,7 +54,7 @@ function ProjectItem({ project }) {
     <li className="project__item grid grid--12-cols">
       <div className="project__img">
         <div className="project__img--wrapper">
-          <img src={imgPath} alt={title}></img>
+          <img src={getImgUrl(imgPath)} alt={title}></img>
         </div>
       </div>
 
