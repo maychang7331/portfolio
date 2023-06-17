@@ -48,7 +48,7 @@ function Contact() {
         </div>
         <a
           className="link--border-oval contact__resume"
-          href="../../May_Resume.pdf"
+          href="https://drive.google.com/file/d/1576hRqoq87d_zRxIquj8k3LV8zzXwVdR/view?usp=sharing"
           target="_blank"
           rel="noopener noreferrer"
         >
