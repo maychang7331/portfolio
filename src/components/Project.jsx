@@ -4,7 +4,8 @@ const projectList = [
   {
     id: 0,
     title: "Personal Protfolio",
-    imgPath: "../assets/project/00_portfolio.png",
+    imgPath:
+      "https://github.com/maychang7331/portfolio/blob/main/src/assets/project/00_portfolio.png",
     desc: "Welcome to my personal portfolio website, the very one you are currently exploring! As you navigate through this site, powered by React and utilizing React hooks, HTML, CSS, and JavaScript, you'll experience an interactive browsing journey. Take a closer look at my diverse range of projects and delve into my background to gain a deeper understanding of my skills. Hope you enjoy your time here.",
     tech: ["React", "JS", "CSS", "HTML"],
   },
@@ -43,9 +44,9 @@ const projectList = [
   },
 ];
 
-function getImgUrl(imgPath) {
-  return new URL(`${imgPath}`, import.meta.url).href;
-}
+// function getImgUrl(imgPath) {
+//   return new URL(`${imgPath}`, import.meta.url).href;
+// }
 
 function ProjectItem({ project }) {
   const { title, imgPath, desc, tech, links } = project;
@@ -54,7 +55,7 @@ function ProjectItem({ project }) {
     <li className="project__item grid grid--12-cols">
       <div className="project__img">
         <div className="project__img--wrapper">
-          <img src={getImgUrl(imgPath)} alt={title}></img>
+          <img src={imgPath} alt={title}></img>
         </div>
       </div>
 
