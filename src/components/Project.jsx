@@ -1,17 +1,21 @@
 import { GithubLogo, ArrowSquareOut } from "@phosphor-icons/react";
+import portfolioImg from "../assets/project/00_portfolio.png";
+import forkifyImg from "../assets/project/01_forkify.png";
+import hdmapImg from "../assets/project/02_hdmap.png";
+import formosat8Img from "../assets/project/03_formosat8.png";
 
 const projectList = [
   {
     id: 0,
     title: "Personal Protfolio",
-    imgPath: "./../assets/project/00_portfolio.png",
+    imgPath: { portfolioImg },
     desc: "Welcome to my personal portfolio website, the very one you are currently exploring! As you navigate through this site, powered by React and utilizing React hooks, HTML, CSS, and JavaScript, you'll experience an interactive browsing journey. Take a closer look at my diverse range of projects and delve into my background to gain a deeper understanding of my skills. Hope you enjoy your time here.",
     tech: ["React", "JS", "CSS", "HTML"],
   },
   {
     id: 1,
     title: "Recipe Website",
-    imgPath: "./../assets/project/01_forkify.png",
+    imgPath: { forkifyImg },
     desc: "A responsive recipe website integrates API for recipe searching. This dynamic platform incorporates features such as bookmarking your favorite recipes, uploading your own recipes, adjusting ingredient amounts, and search suggestions for a personalized user experience.",
     tech: ["JavaScript", "CSS", "HTML"],
     links: {
@@ -22,7 +26,7 @@ const projectList = [
   {
     id: 2,
     title: "Automatic High Definition Map Generation",
-    imgPath: "./../assets/project/02_hdmap.png",
+    imgPath: { hdmapImg },
     desc: "An automated process of generating traffic sign HD maps for autonomous vehicles. Tailored the PointNet neural network model to enhance traffic sign segmentation, resulting in 83% average recall rate. Adjusted GoogLeNet model to attain an accuracy rate over 90% in classifying traffic signs. The proposed process provides a more efficient approach to extracting information from mobile mapping systems.",
     tech: ["Python", "3D & 2D Deep Learning", "Tensorflow-gpu"],
     links: {
@@ -34,7 +38,7 @@ const projectList = [
   {
     id: 3,
     title: "Dynamic Image Generation of Formosat-8 Frame Sensor",
-    imgPath: "./../assets/project/03_formosat8.png",
+    imgPath: { formosat8Img },
     desc: "Developed a GUI in Python that enables data upload, target coordinate specification for generating dynamic image of Formosat-8. Obtained pixel value through collinearity equation with the establishment of perspective relationship between image and object space from inputs such as ephemeris, digital elevation models (DEM), and ortho-images.",
     tech: ["Python", "tkinter", "vectorization", "gdal"],
     links: {
@@ -54,7 +58,7 @@ function ProjectItem({ project }) {
     <li className="project__item grid grid--12-cols">
       <div className="project__img">
         <div className="project__img--wrapper">
-          <img src={getImgUrl(imgPath)} alt={title}></img>
+          <img src={imgPath} alt={title}></img>
         </div>
       </div>
 
