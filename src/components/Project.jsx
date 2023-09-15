@@ -10,8 +10,30 @@ const projectList = [
   },
   {
     id: 1,
+    title: "Key-value pair Tree Viewer",
+    imgName: "01_treeViewer-min.png",
+    desc: "The Key-Value Tree Viewer is a sleek web application that intuitively adjusts its structure in response to user interactions. The tool empowers users to create, update, and delete key-value pairs within an adaptable tree view, complete with collapsible tree nodes for enhanced usability.",
+    tech: ["Vue 3", "Tailwind CSS", "Pug", "Pinia"],
+    links: {
+      github: "https://github.com/maychang7331/key-pair-treeViewer",
+      website: "https://key-pair-tree-viewer.netlify.app/",
+    },
+  },
+  {
+    id: 2,
+    title: "Contact Card",
+    imgName: "02_random-user-min.png",
+    desc: "A web tool that showcase contact information while ensuring a consistently user experience. Users can easily switch between view modes, customize item display, and add contacts to favorites with settings persisting even after refreshing.",
+    tech: ["Vue 3", "Tailwind CSS", "Pug", "Pinia"],
+    links: {
+      github: "https://github.com/maychang7331/random-user",
+      website: "https://front-random-user.netlify.app/",
+    },
+  },
+  {
+    id: 3,
     title: "Recipe Website",
-    imgName: "01_forkify-min.png",
+    imgName: "03_forkify-min.png",
     desc: "A responsive recipe website integrates API for recipe searching. This dynamic platform incorporates features such as bookmarking your favorite recipes, uploading your own recipes, adjusting ingredient amounts, and search suggestions for a personalized user experience.",
     tech: ["JavaScript", "CSS", "HTML"],
     links: {
@@ -20,9 +42,9 @@ const projectList = [
     },
   },
   {
-    id: 2,
+    id: 4,
     title: "Automatic High Definition Map Generation",
-    imgName: "02_hdmap-min.png",
+    imgName: "04_hdmap-min.png",
     desc: "An automated process of generating traffic sign HD maps for autonomous vehicles. Tailored the PointNet neural network model to enhance traffic sign segmentation, resulting in 83% average recall rate. Adjusted GoogLeNet model to attain an accuracy rate over 90% in classifying traffic signs. The proposed process provides a more efficient approach to extracting information from mobile mapping systems.",
     tech: ["Python", "3D & 2D Deep Learning", "Tensorflow-gpu"],
     links: {
@@ -32,9 +54,9 @@ const projectList = [
     },
   },
   {
-    id: 3,
+    id: 5,
     title: "Dynamic Image Generation of Formosat-8 Frame Sensor",
-    imgName: "03_formosat8-min.png",
+    imgName: "05_formosat8-min.png",
     desc: "Developed a GUI in Python that enables data upload, target coordinate specification for generating dynamic image of Formosat-8. Obtained pixel value through collinearity equation with the establishment of perspective relationship between image and object space from inputs such as ephemeris, digital elevation models (DEM), and ortho-images.",
     tech: ["Python", "tkinter", "vectorization", "gdal"],
     links: {
