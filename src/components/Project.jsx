@@ -6,7 +6,7 @@ const projectList = [
     title: "Personal Protfolio",
     imgName: "00_portfolio-min.png",
     desc: "Welcome to my personal portfolio website, the very one you are currently exploring! As you navigate through this site, powered by React and utilizing React hooks, HTML, CSS, and JavaScript, you'll experience an interactive browsing journey. Take a closer look at my diverse range of projects and delve into my background to gain a deeper understanding of my skills. Hope you enjoy your time here.",
-    tech: ["React", "JS", "CSS", "HTML"],
+    tech: ["React", "React Hooks", "Sass", "HTML"],
   },
   {
     id: 1,
